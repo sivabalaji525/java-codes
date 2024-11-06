@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+    public static boolean isCoprime(int a, int b) {
+        return gcd(a, b) == 1;
+    }
+
+   
+    public static int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b, a % b);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter the value for a: ");
+        int a = sc.nextInt();
+        
+        for (int i = 5; i <= a; i++) {
+            for (int j = 4; j < i; j++) {
+                for (int k = 3; k < j; k++) {
+               
+                    if (i * i == j * j + k * k && isCoprime(i, j) && isCoprime(j, k) && isCoprime(k, i)) {
+                        System.out.println( k + " " + j + " " + i);
+                    }
+                }
+            }
+        }
+
+        sc.close();
+    }
+}
