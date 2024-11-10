@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter: ");
+        String s = sc.nextLine();
+        
+        int st = 0, e = 0;
+        Set<Character> seen = new HashSet<>();
+        int wind = 1;
+
+        while (e < s.length()) {
+            char ch = s.charAt(e);
+
+            while (seen.contains(ch)) {
+                seen.remove(s.charAt(st));
+                st++;
+            }
+
+            seen.add(ch);
+            wind = Math.max(wind, seen.size());
+            e++;
+        }
+
+        System.out.println(wind);
+    }
+}
