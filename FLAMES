@@ -1,0 +1,58 @@
+    import java.util.*;
+    public class Main{
+        public static void main(String[] args){
+            
+            List<Character> l1 = new ArrayList<>();
+            List<Character> l2 = new ArrayList<>();
+            
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Eneter the string: ");
+            String s = sc.nextLine();
+            
+            System.out.println("Eneter the string2: ");
+            String s2 = sc.nextLine();
+            
+            for(char ch : s.toCharArray()){
+                l1.add(ch);
+            }
+            for(char ch:s2.toCharArray()){
+                l2.add(ch);
+            }
+           
+            System.out.println(l1);
+            System.out.println(l2);
+            
+            int len1 =l1.size();
+            int len2 = l2.size();
+            
+            for(int i= 0;i < len1;i++){
+                
+                for(int j = 0;j < len2;j++){
+                    if(l1.get(i).equals(l2.get(j))){
+                      l1.set(i,'2');
+                      l2.set(j,'2');}}}
+                      
+                      int count = 0;
+                      
+                      for(char ch:l1){
+                          if(ch !='2'){
+                              count++;
+                          }
+}
+                      for(char ch2:l2){
+                          if(ch2 !='2'){
+                              count++;
+                          }
+}
+                          
+                          List<Character> res = new ArrayList<>(Arrays.asList('F','L','A','M','E','S'));
+                          int index = 0;
+                          while(res.size() > 1){
+                          index = (index + count - 1) % res.size();
+                          res. remove(index);}
+                              System.out.println(res.get(0));
+                          }
+                          
+                      }
+                        
+                    
