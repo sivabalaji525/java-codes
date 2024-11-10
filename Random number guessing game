@@ -1,0 +1,69 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("player1:");
+        String p1 = sc.nextLine();
+        
+        System.out.println("player2:");
+        String p2 = sc.nextLine();
+        
+        System.out.println("we shall begin this: guess the answer");
+        
+        Random r = new Random();
+        Set<Integer> num = new HashSet<>();
+        
+        while (num.size() < 5) {
+            int number = r.nextInt(10) + 1;
+            num.add(number);
+        }
+        
+        List<Integer> Ran1 = new ArrayList<>(num);
+        
+        Set<Integer> num2 = new HashSet<>();
+        
+        while (num2.size() < 5) {
+            int number = r.nextInt(10) + 1;
+            num2.add(number);
+        }
+        
+        List<Integer> Ran2 = new ArrayList<>(num2);
+        
+        int gee1;
+        int gee2;
+        int count1 = 0;
+        int count2 = 0;
+        
+        for (int i = 0; i < 3; i++) {
+            
+            System.out.println("p1 guess:");
+            gee1 = sc.nextInt();
+            if (Ran1.contains(gee1)) {
+                System.out.println("correct");
+                count1++;
+            } else {
+                System.out.println("Wrong");
+            }
+            
+            System.out.println("p2 guess:");
+            gee2 = sc.nextInt();
+            if (Ran2.contains(gee2)) {
+                System.out.println("correct");
+                count2++;
+            } else {
+                System.out.println("Wrong");
+            }
+        }
+        
+        if (count1 > count2) {
+            System.out.println("randomno: " + Ran1);
+            System.out.println("p1 wins with score " + count1);
+        } else {
+            System.out.println("randomno: " + Ran2);
+            System.out.println("p2 wins with score " + count2);
+        }
+    }
+}
